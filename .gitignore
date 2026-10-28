@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# FastF1 cache and generated data
+data/cache/
+data/raw/
+data/processed/
+*.parquet
+*.csv
+*.pkl
+*.joblib
+*.db
+
+# Frontend
+node_modules/
+dist/
+coverage/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

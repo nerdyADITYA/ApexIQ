@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: f1_analytics
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:password@db:5432/f1_analytics
+      FASTF1_CACHE_DIR: /data/cache
+      CORS_ORIGINS: http://localhost:5173
+    volumes:
+      - f1cache:/data/cache
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+  f1cache:
