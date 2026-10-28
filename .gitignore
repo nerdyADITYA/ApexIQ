@@ -13,9 +13,11 @@ venv/
 !.env.example
 
 # FastF1 cache and generated data
-data/cache/
-data/raw/
-data/processed/
+**/data/cache/
+**/data/raw/
+**/data/processed/
+*.ff1pkl
+*.sqlite
 *.parquet
 *.csv
 *.pkl
